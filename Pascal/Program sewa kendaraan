@@ -9,7 +9,6 @@ var
   JumlahKendaraan, LamaSewa: integer;
   TarifSewa, Potongan: integer;
 begin
-  clrscr; // Membersihkan layar
   writeln('=== Menghitung Tarif Sewa Kendaraan ===');
   write('Nama Penyewa: ');
   readln(NamaPenyewa);
@@ -44,7 +43,6 @@ var
   AngkaPertama, AngkaKedua, Batasan: integer;
   i: integer;
 begin
-  clrscr; // Membersihkan layar
   writeln('=== Perubahan Kelipatan Angka Dengan "#" ===');
   write('Angka Pertama: ');
   readln(AngkaPertama);
@@ -77,7 +75,6 @@ var
   AngkaAkhir, Batasan: integer;
   i: integer;
 begin
-  clrscr; // Membersihkan layar
   writeln('=== Program Kelipatan Angka Akhir ===');
   write('Angka Akhir: ');
   readln(AngkaAkhir);
@@ -86,10 +83,13 @@ begin
 
   i := 1;
   repeat
-    writeln(i * AngkaAkhir);
+    if i mod AngkaAkhir = 0 then
+      write(i, ' ');
+
     i := i + 1;
   until i > Batasan;
 
+  writeln;
   writeln('====================');
 end;
 
@@ -98,7 +98,6 @@ var
   Baris, Kolom: integer;
   i, j: integer;
 begin
-  clrscr; // Membersihkan layar
   writeln('=== Program Perulangan "X" dan "O" ===');
   write('Jumlah Baris: ');
   readln(Baris);
@@ -128,7 +127,6 @@ var
   TotalPendapatan, Keuntungan, PendapatanBersih: integer;
   i: integer;
 begin
-  clrscr; // Membersihkan layar
   writeln('=== Menghitung Penjualan Gamis ===');
   write('Banyak Pesanan Gamis: ');
   readln(BanyakPesanan);
@@ -164,7 +162,6 @@ var
   DataMahasiswa: array of array of string;
   i, j: integer;
 begin
-  clrscr; // Membersihkan layar
   writeln('=== Pendataan Pendaftaran Mahasiswa Baru ===');
   write('Jumlah Mahasiswa: ');
   readln(JumlahMahasiswa);
@@ -199,8 +196,8 @@ var
   Selesai: boolean;
 begin
   Selesai := False;
+
   repeat
-    clrscr; // Membersihkan layar
     writeln('Menu Program:');
     writeln('1. Menghitung Tarif Sewa Kendaraan');
     writeln('2. Perubahan Kelipatan Angka dengan "#"');
