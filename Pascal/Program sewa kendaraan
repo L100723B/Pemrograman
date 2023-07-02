@@ -1,0 +1,84 @@
+program MenuProgram;
+
+uses
+  crt;
+
+procedure HitungTarifSewaKendaraan;
+var
+  NamaPenyewa: string;
+  JumlahKendaraan, LamaSewa: integer;
+  TarifSewa, Potongan: integer;
+begin
+  clrscr;
+  writeln('=== Menghitung Tarif Sewa Kendaraan ===');
+  write('Nama Penyewa: ');
+  readln(NamaPenyewa);
+  write('Jumlah Kendaraan: ');
+  readln(JumlahKendaraan);
+  write('Lama Hari Sewa: ');
+  readln(LamaSewa);
+
+  TarifSewa := JumlahKendaraan * 200000;
+
+  if (JumlahKendaraan >= 3) and (LamaSewa >= 3) then
+    Potongan := 200000
+  else if (JumlahKendaraan <= 2) and (LamaSewa >= 3) then
+    Potongan := 50000
+  else if (JumlahKendaraan >= 3) and (LamaSewa <= 2) then
+    Potongan := 100000
+  else
+    Potongan := 0;
+
+  TarifSewa := TarifSewa - Potongan;
+
+  writeln('====================');
+  writeln('Nama Penyewa: ', NamaPenyewa);
+  writeln('Jumlah Kendaraan: ', JumlahKendaraan);
+  writeln('Lama Hari Sewa: ', LamaSewa);
+  writeln('Tarif yang harus dibayarkan: ', TarifSewa);
+  writeln('====================');
+end;
+
+procedure PerubahanKelipatanAngka;
+var
+  AngkaPertama, AngkaKedua, Batasan: integer;
+  i: integer;
+begin
+  clrscr; // Membersihkan layar
+  writeln('=== Perubahan Kelipatan Angka Dengan "#" ===');
+  write('Angka Pertama: ');
+  readln(AngkaPertama);
+  write('Angka Kedua: ');
+  readln(AngkaKedua);
+  write('Batasan Panjang Deret Bilangan: ');
+  readln(Batasan);
+
+  i := 1;
+  while i <= Batasan do
+  begin
+    if (i mod AngkaPertama = 0) and (i mod AngkaKedua = 0) then
+      write('# ')
+    else if (i mod AngkaPertama = 0) then
+      write(AngkaPertama, ' ')
+    else if (i mod AngkaKedua = 0) then
+      write(AngkaKedua, ' ')
+    else
+      write(i, ' ');
+
+    i := i + 1;
+  end;
+
+  writeln;
+  writeln('====================');
+end;
+
+procedure KelipatanAngkaAkhir;
+var
+  AngkaAkhir, Batasan: integer;
+  i: integer;
+begin
+  clrscr; // Membersihkan layar
+  writeln('=== Program Kelipatan Angka Akhir ===');
+  write('Angka Akhir: ');
+  readln(AngkaAkhir);
+  write('Batasan Panjang Deret Bilangan
