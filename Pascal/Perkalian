@@ -1,0 +1,14 @@
+uses crt;
+function Kali(angka1, angka2: Integer): Integer;
+begin
+clrscr;
+  Kali := angka1 * angka2;
+end;
+
+var
+  nilai: Integer;
+
+begin
+  nilai := Kali(10, 50);
+  writeln('Hasil perkalian: ', nilai);
+end.
